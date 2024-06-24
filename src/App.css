@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+nav{
+  background-color: #9c9a9a;
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-link{
+  color: #454444;
+  text-decoration: none;
+  border: solid transparent;
+  border-image: linear-gradient(90deg,red,purple);
+  padding: 5px;
+  background-color: white;
+  border-image-slice: 1;
+  transition: color 0.15s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link:hover{
+  color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  /* background: linear-gradient(135deg, rgb(0, 255, 115) 40%, rgb(0, 183, 255) 100%); */
+  background-color: #fff;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.login-form{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+  border: solid 1px black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+  width: 350px;
+  height: 30em;
+  background-color: #333333a0;
+}
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  margin-top: 0px;
+  padding: 20px;
+}
+
+.logo{
+  width: 20%; 
+}
+
+.error-msg{
+  color: red;
+}
+
+input{
+  width: 210px;
+  font-size: 12px;
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  outline: 0;
+}
+
+button{
+  width: 210px;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background-color: #333333;
+  cursor: pointer;
+}
+
+.register-link{
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-btn{
+  margin-top: 20px;
+  margin-left: 25px ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-span{
+  color: rgb(25, 4, 8);
+}
+
+.login-span:hover{
+  text-decoration: underline;
 }

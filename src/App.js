@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './Components/Login';
+import Header from './Components/Header';
+import Register from './Components/Register';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleRegisterClick = () =>{
+    setShowLogin(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+      <Header />
+      <Link to="/register" className='nav-link' onClick={handleRegisterClick}>Register</Link>
+      {showLogin && <Link to="/" className='nav-link'>Login</Link>}
+      </nav>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} /> 
+      </Routes>
+    </Router> 
   );
 }
 
