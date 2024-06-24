@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import {auth} from '../firebaseConfig'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Register() {
@@ -29,8 +31,9 @@ function Register() {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
+          toast("User Created");
           await createUserWithEmailAndPassword(auth, email, password)
-          console.log("User Created");
+          
         }catch(err){
           console.log(err);
         }
@@ -40,9 +43,7 @@ function Register() {
         }
         else{
             setError("Passwords do no match");
-        };
-
-
+        }
     }
 
     // const password = document.getElementById('password');
@@ -86,6 +87,7 @@ function Register() {
         <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} id="confirm-password" name="confirm-password" placeholder='Confirm your password' required/>
         {error && <p className='error-msg'>{error}</p>}
         <button type="submit">Register</button>
+        <ToastContainer />
       </form>
     </div>
 

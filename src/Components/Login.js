@@ -2,6 +2,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import { auth } from '../firebaseConfig';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -16,8 +18,9 @@ function Login() {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     try{
+      toast("Welcome!!!");
       await signInWithEmailAndPassword(auth,email,password)
-      console.log("Welcome!!!");
+      
     }catch(err){
       console.log(err.message);
     }
@@ -36,11 +39,10 @@ function Login() {
             <div>
             <button className='login-btn'>Login</button>
             <br />
-            <Link to="/register" className='register-link'>Don't have an account? Register here</Link>
+            <Link to="/register" className='register-link'>Don't have an account? <span className='login-span'>Register here</span></Link>
 
             </div>
-            
-
+            <ToastContainer />
         </form>
     </div>
   )
