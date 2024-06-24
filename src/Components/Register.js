@@ -42,7 +42,7 @@ function Register() {
             navigate("/");
         }
         else{
-            setError("Passwords do no match");
+            setError(toast("Password do not match"));
         }
     }
 

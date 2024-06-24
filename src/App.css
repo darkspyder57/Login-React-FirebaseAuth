@@ -7,18 +7,19 @@ nav{
 }
 
 .nav-link{
-  color: #454444;
+  color: white;
   text-decoration: none;
   border: solid transparent;
   border-image: linear-gradient(90deg,red,purple);
-  padding: 5px;
-  background-color: white;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
   border-image-slice: 1;
   transition: color 0.15s;
+
 }
 
 .nav-link:hover{
-  color: #000000;
+  font-weight: 500;
 }
 
 body{
@@ -58,9 +59,9 @@ body{
   width: 20%; 
 }
 
-.error-msg{
+/* .error-msg{
   color: red;
-}
+} */
 
 input{
   width: 210px;
@@ -76,12 +77,20 @@ input{
 button{
   width: 210px;
   font-size: 16px;
-  color: white;
+  /* color: white;
   padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 25px;
-  background-color: #333333;
+  background-color: #333333; */
+  color: white;
+  text-decoration: none;
+  border: solid transparent;
+  border-image: linear-gradient(90deg,red,purple);
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-image-slice: 1;
+  transition: color 0.15s;
   cursor: pointer;
 }
 

@@ -22,7 +22,7 @@ function Login() {
       await signInWithEmailAndPassword(auth,email,password)
       
     }catch(err){
-      console.log(err.message);
+      toast(err.message);
     }
   }
 
